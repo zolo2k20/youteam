@@ -1,0 +1,1088 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#F27023">
+
+
+    <title>Hire Remote Developers from Vetted Agencies</title>
+        <meta property="og:image" content="images/YouTeam_sharable.png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="images/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="images/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="images/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico'>
+        <link rel="manifest" href="/manifest.json">
+        <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#f27023">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-TileImage" content="images/mstile-144x144.png">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <link rel="stylesheet" href="{% static 'css/cookieconsent.min.css' %}">
+<script>
+          window.addEventListener('load', function () {
+            if (!Object.prototype.hasOwnProperty.call(window, 'cookieconsent')) {
+              return;
+            }
+
+            window.cookieconsent.initialise({
+              palette: {
+                popup: {
+                  background: '#f8f8f8',
+                  text: '#9b9b9b',
+                },
+                button: {
+                  background: '#52C67C',
+                  text: '#fff',
+                }
+              },
+              theme: 'edgeless',
+            });
+          });
+        </script>
+
+
+                          </head>
+<body class=" js-chatra-onscroll ">
+
+    <div id="vue-app">
+                    <div class="wrapper  wrapper--home ">
+                    <header class="header  header--transparent header--main header--yc-widget-scroll" :class="headerClasses">
+                    <div class="header__container">
+    <div class="header__top">
+        <div class="header__logo">
+            <a href="/" title="YouTeam">
+                <i class="logo"></i>
+                <div class="header__logo__tagline">HIRE <span>BETTER</span> DEVELOPERS</div>
+            </a>
+        </div>
+        <div class="header__navigation">
+                        <span class="header__divider"></span>
+            <nav class="menu">
+                <button is="dropdown-button" name="top-menu" class="menu__button">
+                    <span class="menu__icon"><i class="fi-menu"></i></span>
+                </button>
+                <div class="mobile-menu" :class="{ open: $store.getters['dropdown/isActivated']('top-menu') }">
+                    <div class="user-hidden">
+                        <div class="header__username"
+                            :class="{ visible: $store.getters['auth/isAuthorized'] === true }"
+                        >
+                            <button is="dropdown-button" name="username-dropdown" class="ilink ilink--username"
+                            >
+                                <div class="card-inline__photo-empty"
+                                    :style="{ backgroundColor: $store.getters['auth/userAttribute']('color') }"
+                                    v-text="$store.getters['auth/userAttribute']('initials')"
+                                >
+                                </div>
+                                <span v-text="$store.getters['auth/userAttribute']('fullName')"></span>
+                                <i class="fi-arrow-down username__icon"></i>
+                            </button>
+                            <div is="dropdown" name="username-dropdown" class="username__dropdown"
+                                style="display: none">
+                                <ul>
+                                                                        <li>
+                                        <a href="/profile" title="Edit profile">Edit
+                                            profile</a>
+                                    </li>
+                                    <li>
+                                        <a href="/invoices" title="Invoices">Invoices</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)" title="Log out"
+                                            @click.prevent="$wizard.open('auth-popup', { view: 'logout' })">
+                                            Log Out
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="javascript:void(0)" title="Log In"
+                            class="ilink ilink--login"
+                            :class="{ visible: $store.getters['auth/isAuthorized'] === false }"
+                            @click.prevent="$wizard.open('auth-popup', { view: 'login' })"
+                        >
+                            Log In
+                        </a>
+						<a href="javascript:void(0)" title="Sign Up"
+                            class="ilink ilink--login"
+                            :class="{ visible: $store.getters['auth/isAuthorized'] === false }"
+                            @click.prevent="$wizard.open('auth-popup', { view: 'sign-up' })"
+                        >
+                            Sign Up
+                        </a>
+                        <a href="javascript:void(0)" title="Sign Up"
+                            class="yt-btn yt-btn--light-green"
+                            :class="{ visible: $store.getters['auth/isAuthorized'] === false }"
+                            @click.prevent="$wizard.open('auth-popup', { view: 'sign-up' })"
+                        >
+                            Post a Job                        </a>
+                    </div>
+                    <span class="header__divider"></span>
+                    <div is="dropdown" name="top-menu" class="menu__dropdown menu__dropdown--right"
+                        style="display: none">
+                        <ul>
+                            <li>
+                                <a
+                                    @click="$store.dispatch('dropdown/deactivate', 'top-menu')"
+                                    data-to-anchor="how-it-works"
+                                    data-not-found-redirect="/#how-it-works"
+                                >
+                                    HOW IT WORKS
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/vetting.html">VETTING PROCESS</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" @click.prevent="$wizard.open('contact')">CONTACT</a>
+                            </li>
+                            <li>
+                                <a href="/blog">BLOG</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="header__bottom"
+        :class="{ 'header__bottom--show-on-small': isShownHeaderBottomPanel }"
+    >
+        <div class="search search--header" data-tip-context="search-input" data-show-tip="input"
+     :class="{ 'search--categories-opened': $store.getters['dropdown/isActivated']('most-popular-searches-header') }"
+>
+    <search-input
+        :source-url="'/suggestions/?q=%query%'"
+        :label-property="'name'"
+        :set-focus-on-input="false"
+                    ></search-input>
+</div>
+
+    </div>
+</div>
+            </header>
+                <div class=" main main--sticky ">
+
+    <search-analytics
+        :event="'Home'"
+        :ab-test="'INDIVIDUAL'"
+    ></search-analytics>
+
+            <section class="cover main-screen">
+    <div class="cover__container">
+        <div class="cover__middle">
+            <h2 class="cover__heading">HIRE <span style="color: rgb(242, 112, 35);">BETTER</span> DEVELOPERS</h2>
+            <h1 class="cover__text">The easiest way to set up an offshore development team</h1>
+            <div class="search search--header" data-tip-context="search-input" data-show-tip="input"
+                 :class="{ 'search--categories-opened': $store.getters['dropdown/isActivated']('most-popular-searches') }"
+            >
+                <search-input
+                    :source-url="'/suggestions/?q=%query%'"
+                    :label-property="'name'"
+                    :set-focus-on-input="false"
+                >
+                    <div class="vue-search-input vue-search-input--initialized">
+                        <i class="vue-search-input__icon"></i>
+                        <div class="vue-search-input__container" ref="input-wrapper">
+                            <div class="vue-search-input__query-input-wrapper">
+                                <input class="vue-search-input__query-input" type="text" placeholder="FIND SOFTWARE ENGINEERS" value="" />
+                            </div>
+                        </div>
+                    </div>
+                </search-input>
+            </div>
+            <div class="card-inline__labels" ref="most-popular-searches">
+                <span>Most popular searches:</span>
+                <a href="/results/java" class="card-inline__label">Java</a>
+                <a href="/results/blockchain" class="card-inline__label">Blockchain</a>
+                <a href="/results/javascript" class="card-inline__label">JavaScript</a>
+                <a href="/results/reactjs" class="card-inline__label">React.js</a>
+                <a href="/results/angularjs" class="card-inline__label">AngularJS</a>
+                <a href="/results/php" class="card-inline__label">PHP</a>
+                <a href="/results/ios" class="card-inline__label">iOs</a>
+                <a href="/results/frontend-development" class="card-inline__label">Front End</a>
+                <a href="/results/c-sharp" class="card-inline__label">C#</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="cover__container">
+    <div class="cover-brands">
+        <span>Hire developers from the firms trusted by:</span>
+        <ul data-to-anchor="brands">
+            <li><a><img src="images/microsoft.svg" alt=""></a></li>
+            <li><a><img src="images/amazon-com.svg" alt=""></a></li>
+            <li><a><img src="images/autodesk-4.svg" alt=""></a></li>
+            <li><a><img src="images/marvel.svg" alt=""></a></li>
+            <li><a><img src="images/nokia-3.svg" alt=""></a></li>
+            <li><a><img src="images/siemens.svg" alt=""></a></li>
+        </ul>
+    </div>
+</div>
+
+<section class="section section--adv how-it-works" data-anchor="how-it-works">
+    <div class="container-fluid">
+        <header class="section__header text-center">
+            <div class="section__line"></div>
+            <h2 class="section__heading m-b-05">How It Works</h2>
+            <div class="section__heading-s">HIRE ENGINEERS YOU WON'T FIND AT FREELANCE PORTALS</div>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="ic"><img src="images/ic-Find-the-Team.svg" alt=""></div>
+                    <span>Find the Talent</span>
+                    <p>
+                        Browse profiles of individual engineers at handpicked dev shops that have spare tech talent capacity.
+                    </p>
+                    <a href="#" data-to-anchor="what-makes-our">Why dev shops always have good developers available</a>
+                </div>
+                <div class="col-md-3">
+                    <div class="ic"><img src="images/group2.svg" alt=""></div>
+                    <span>Meet the Firm</span>
+                    <p>Talk to engineers that you want to work with <b>before</b> signing up with their firm.</p>
+                    <a href="#" target="_blank">How we vet the dev shops</a>
+                </div>
+                <div class="col-md-3">
+                    <div class="ic"><img src="images/gears.svg" alt=""></div>
+                    <span>Don’t Bother With Management</span>
+                    <p>Payroll, office space, vacations, legal, training, and all other admin is handled by the firm.</p>
+
+                    <a href="#" target="_blank">Learn more about the firms behind our complimentary management layer</a>
+                </div>
+                <div class="col-md-3">
+                    <div class="ic"><img src="images/secure.svg" alt=""></div>
+                    <span>Work Safely</span>
+                    <p>Enjoy stable and reliable cooperation with our money-back guarantee for the entire duration of your contract</p>
+                    <a href="#" data-to-anchor="extra-costs">Here’s how we address the typical outsourcing risks</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    <section class="yc-banner">
+        <div class="container">
+            <span>Backed by</span>
+            <a href="#" target="_blank"><img src="images//YC-logo-ed.svg" alt=""></a>
+        </div>
+    </section>
+
+<section class="section talent-cards talent-preview" style=""><div class="container-fluid"><header class="section__header text-center"><h2 class="section__heading" style="text-transform: uppercase;">
+                Select talent: October 2018
+            </h2></header> <div class="container"><div class="row"><div class="col-xl-3 col-lg-3 col-md-4"><a href="/talent/2515" target="_blank"><div class="talent-card"><div class="card-short__image avatar--lg"><img src="https://d2abrqas732254.cloudfront.net/images/specialists/49e43baf4ea1e446c2bd69e26a886cf7d5709737.png" alt="Software Engineer with 3 years of experience in the industry."></div> <!----> <div class="card-short__content"><h4 class="card-short__heading">Jesus H.</h4> <p class="card-short__text">Software Engineer with 3 years of experience in the industry.</p></div> <div class="card-short__info"><div class="row"><div class="col-md-4"><p><span><span>£66,200</span></span> Annually</p></div> <div class="col-md-4"><p><span>3 years</span> JavaScript
+                                        </p></div> <div class="col-md-4"><p><span>4</span> Projects</p></div></div></div> <div class="hidden-info"><h4 class="card-short__heading">Jesus H.</h4> <div class="skills_progress_container_main"><div class="skills_progress_container"><div class="skills_progress"><p title="JavaScript" class="language">JavaScript</p> <div><div class="stack__bar stack__bar--big stack__bar--big__spec"><div class="stack__bar__percentage" style="width: 37.5%;"></div></div></div> <p class="xp_time">3 years</p></div><div class="skills_progress"><p title="React.js" class="language">React.js</p> <div><div class="stack__bar stack__bar--big stack__bar--big__spec"><div class="stack__bar__percentage" style="width: 12.5%;"></div></div></div> <p class="xp_time">1 years</p></div><div class="skills_progress"><p title=".NET" class="language">.NET</p> <div><div class="stack__bar stack__bar--big stack__bar--big__spec"><div class="stack__bar__percentage" style="width: 12.5%;"></div></div></div> <p class="xp_time">1 years</p></div><div class="skills_progress"><p title="Ruby on Rails" class="language">Ruby on Rails</p> <div><div class="stack__bar stack__bar--big stack__bar--big__spec"><div class="stack__bar__percentage" style="width: 12.5%;"></div></div></div> <p class="xp_time">1 years</p></div></div></div> <div class="card-profile__t-head-sm m-t-1"><p>English:</p>&nbsp;<span>Advanced</span></div> <a class="yt-btn yt-btn--right-arrow">View Profile</a></div></div></a></div><div class="col-xl-3 col-lg-3 col-md-4"><a href="/talent/2346" target="_blank"><div class="talent-card"><div class="card-short__image avatar--lg"><img src="https://d2abrqas732254.cloudfront.net/images/specialists/3924ec3a94a53c000ade7aa9732bd93a521d8fbc.png" alt="JavaScript (Angular, React, Node) developer"></div> <!----> <div class="card-short__content"><h4 class="card-short__heading">Natali S.</h4> <p class="card-short__text">JavaScript (Angular, React, Node) developer</p></div> <div class="card-short__info"><div class="row"><div class="col-md-4"><p><span><span>£51,700</span></span> Annually</p></div> <div class="col-md-4"><p><span>5 years</span> JavaScript
+                                        </p></div> <div class="col-md-4"><p><span>3</span> Projects</p></div></div></div> <div class="hidden-info"><h4 class="card-short__heading">Natali S.</h4> <div class="skills_progress_container_main"><div class="skills_progress_container"><div class="skills_progress"><p title="JavaScript" class="language">JavaScript</p> <div><div class="stack__bar stack__bar--big stack__bar--big__spec"><div class="stack__bar__percentage" style="width: 62.5%;"></div></div></div> <p class="xp_time">5 years</p></div><div class="skills_progress"><p title="AngularJS" class="language">AngularJS</p> <div><div class="stack__bar stack__bar--big stack__bar--big__spec"><div class="stack__bar__percentage" style="width: 37.5%;"></div></div></div> <p class="xp_time">3 years</p></div><div class="skills_progress"><p title="React.js" class="language">React.js</p> <div><div class="stack__bar stack__bar--big stack__bar--big__spec"><div class="stack__bar__percentage" style="width: 50%;"></div></div></div> <p class="xp_time">4 years</p></div><div class="skills_progress"><p title="D3.js" class="language">D3.js</p> <div><div class="stack__bar stack__bar--big stack__bar--big__spec"><div class="stack__bar__percentage" style="width: 25%;"></div></div></div> <p class="xp_time">2 years</p></div><div class="skills_progress"><p title="HTML5" class="language">HTML5</p> <div><div class="stack__bar stack__bar--big stack__bar--big__spec"><div class="stack__bar__percentage" style="width: 62.5%;"></div></div></div> <p class="xp_time">5 years</p></div><div class="skills_progress"><p title="CSS3" class="language">CSS3</p> <div><div class="stack__bar stack__bar--big stack__bar--big__spec"><div class="stack__bar__percentage" style="width: 50%;"></div></div></div> <p class="xp_time">4 years</p></div></div></div> <div class="card-profile__t-head-sm m-t-1"><p>English:</p>&nbsp;<span>Intermediate</span></div> <a class="yt-btn yt-btn--right-arrow">View Profile</a></div></div></a></div><div class="col-xl-3 col-lg-3 col-md-4"><a href="/talent/2160" target="_blank"><div class="talent-card"><div class="card-short__image avatar--lg"><img src="https://d2abrqas732254.cloudfront.net/images/specialists/9d5a9210932720b0d873199af2409a26b15db3e9.png" alt="Back-end PHP Developer"></div> <!----> <div class="card-short__content"><h4 class="card-short__heading">Oleh S.</h4> <p class="card-short__text">Back-end PHP Developer</p></div> <div class="card-short__info"><div class="row"><div class="col-md-4"><p><span><span>£31,000</span></span> Annually</p></div> <div class="col-md-4"><p><span>3 years</span> PHP
+                                        </p></div> <div class="col-md-4"><p><span>3</span> Projects</p></div></div></div> <div class="hidden-info"><h4 class="card-short__heading">Oleh S.</h4> <div class="skills_progress_container_main"><div class="skills_progress_container"><div class="skills_progress"><p title="PHP" class="language">PHP</p> <div><div class="stack__bar stack__bar--big stack__bar--big__spec"><div class="stack__bar__percentage" style="width: 37.5%;"></div></div></div> <p class="xp_time">3 years</p></div><div class="skills_progress"><p title="Laravel Framework" class="language">Laravel Framework</p> <div><div class="stack__bar stack__bar--big stack__bar--big__spec"><div class="stack__bar__percentage" style="width: 37.5%;"></div></div></div> <p class="xp_time">3 years</p></div><div class="skills_progress"><p title="JavaScript" class="language">JavaScript</p> <div><div class="stack__bar stack__bar--big stack__bar--big__spec"><div class="stack__bar__percentage" style="width: 37.5%;"></div></div></div> <p class="xp_time">3 years</p></div><div class="skills_progress"><p title="Phalcon" class="language">Phalcon</p> <div><div class="stack__bar stack__bar--big stack__bar--big__spec"><div class="stack__bar__percentage" style="width: 25%;"></div></div></div> <p class="xp_time">2 years</p></div><div class="skills_progress"><p title="Yii 2" class="language">Yii 2</p> <div><div class="stack__bar stack__bar--big stack__bar--big__spec"><div class="stack__bar__percentage" style="width: 25%;"></div></div></div> <p class="xp_time">2 years</p></div><div class="skills_progress"><p title="MongoDB" class="language">MongoDB</p> <div><div class="stack__bar stack__bar--big stack__bar--big__spec"><div class="stack__bar__percentage" style="width: 25%;"></div></div></div> <p class="xp_time">2 years</p></div></div></div> <div class="card-profile__t-head-sm m-t-1"><p>English:</p>&nbsp;<span>Intermediate</span></div> <a class="yt-btn yt-btn--right-arrow">View Profile</a></div></div></a></div><div class="col-xl-3 col-lg-3 col-md-4"><a href="/talent/1943" target="_blank"><div class="talent-card"><div class="card-short__image avatar--lg"><img src="https://d2abrqas732254.cloudfront.net/images/specialists/aa9e231aaa516530fde37f1bb5a8aba506054d66.png" alt="Senior Go developer/Architect with a decent background in building microservices."></div> <!----> <div class="card-short__content"><h4 class="card-short__heading">Andrew O.</h4> <p class="card-short__text">Senior Go developer/Architect with a decent background in building microservices.</p></div> <div class="card-short__info"><div class="row"><div class="col-md-4"><p><span><span>£66,200</span></span> Annually</p></div> <div class="col-md-4"><p><span>8 years</span> C#
+                                        </p></div> <div class="col-md-4"><p><span>10</span> Projects</p></div></div></div> <div class="hidden-info"><h4 class="card-short__heading">Andrew O.</h4> <div class="skills_progress_container_main"><div class="skills_progress_container"><div class="skills_progress"><p title="C#" class="language">C#</p> <div><div class="stack__bar stack__bar--big stack__bar--big__spec"><div class="stack__bar__percentage" style="width: 100%;"></div></div></div> <p class="xp_time">8 years</p></div><div class="skills_progress"><p title="Java" class="language">Java</p> <div><div class="stack__bar stack__bar--big stack__bar--big__spec"><div class="stack__bar__percentage" style="width: 100%;"></div></div></div> <p class="xp_time">8 years</p></div><div class="skills_progress"><p title="Golang" class="language">Golang</p> <div><div class="stack__bar stack__bar--big stack__bar--big__spec"><div class="stack__bar__percentage" style="width: 62.5%;"></div></div></div> <p class="xp_time">5 years</p></div></div></div> <div class="card-profile__t-head-sm m-t-1"><p>English:</p>&nbsp;<span>Upper Intermediate</span></div> <a class="yt-btn yt-btn--right-arrow">View Profile</a></div></div></a></div></div></div></div></section>
+            <section class="testimonials blue">
+            <div class="section__container container-fluid">
+                <div class="testimonials_content">
+                    <p class="text">It's just much more convenient to find a small team. I talk to one person, get 5 hand-picked CVs, interview candidates, hire the best ones, done!</p>
+                    <div class="author">
+                        <div class="title">
+                            <p>Florian Mott, <span>CEO</span></p>
+                            <div class="brand"><img src="images/logo-mobile.svg" alt=""></div>
+                        </div>
+                        <div class="img"><a href="#" target="_blank"><img src="images/florian.png" alt=""></a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <section class="section section--intro section--gray">
+    <div class="section__container container-fluid">
+        <header class="section__header">
+            <div class="section__line"></div>
+            <h2 class="section__heading text-uppercase">Hire developers from the firms trusted by:</h2>
+        </header>
+    </div>
+
+    <div class="container-fluid" data-anchor="brands">
+        <div class="container-flex slider_trusted_by">
+            <div class="row">
+                <div class="col-xs-6 col-md-4 col-lg-2">
+                    <div class="card-small card-small--indent">
+                        <div class="card-small__image">
+                            <a>
+                                <img src="images/johnson-johnson.svg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-4 col-lg-2">
+                    <div class="card-small card-small--indent">
+                        <div class="card-small__image">
+                            <a>
+                                <img src="images/t-mobile.svg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-4 col-lg-2">
+                    <div class="card-small card-small--indent">
+                        <div class="card-small__image">
+                            <a>
+                                <img src="images/amazon-com.svg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-4 col-lg-2">
+                    <div class="card-small card-small--indent">
+                        <div class="card-small__image">
+                            <a>
+                                <img src="images/mercedes-benz-4.svg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-4 col-lg-2">
+                    <div class="card-small card-small--indent">
+                        <div class="card-small__image">
+                            <a>
+                                <img src="images/microsoft.svg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-6 col-md-4 col-lg-2">
+                    <div class="card-small card-small--indent">
+                        <div class="card-small__image">
+                            <a>
+                                <img src="images/autodesk-4.svg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-4 col-lg-2">
+                    <div class="card-small card-small--indent">
+                        <div class="card-small__image">
+                            <a>
+                                <img src="images/canon-logo.svg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-4 col-lg-2">
+                    <div class="card-small card-small--indent">
+                        <div class="card-small__image">
+                            <a>
+                                <img src="images/new-balance-2.svg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-4 col-lg-2">
+                    <div class="card-small card-small--indent">
+                        <div class="card-small__image">
+                            <a>
+                                <img src="images/marvel.svg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-4 col-lg-2">
+                    <div class="card-small card-small--indent">
+                        <div class="card-small__image">
+                            <a>
+                                <img src="images/nokia-3.svg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-4 col-lg-2">
+                    <div class="card-small card-small--indent">
+                        <div class="card-small__image">
+                            <a>
+                                <img src="images/siemens.svg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-4 col-lg-2">
+                    <div class="card-small card-small--indent">
+                        <div class="card-small__image">
+                            <a>
+                                <img src="images/toyota-1.svg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <section class="section  section--topcat">
+    <div class="container-fluid">
+
+        <header class="section__header">
+            <div class="section__line"></div>
+            <h2 class="section__heading">SPECIALISTS AVAILABLE</h2>
+            <p class="section__lead">HIRE APP DEVELOPERS READY TO START WITHIN 2 WEEKS:</p>
+        </header>
+
+        <div class="container-flex">
+            <div class="card-cat">
+                <div class="card-cat__outer">
+                    <a href="/skills-directory" class="card-cat__button"><span class="rlink">AND MORE</span></a>
+                </div>
+                <div class="card-cat__inner">
+                    <div class="card-cat__icon">
+                        <img src="images/1.svg" alt="">
+                    </div>
+                    <h3 class="card-cat__heading"><a href="">Mobile Development</a></h3>
+                    <ul class="card-cat__list">
+                        <li class="card-cat__list__item">
+                            <a href="/results/apple" class="card-cat__list__link" title="Apple developer">Apple
+                                Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/android" class="card-cat__list__link">Android Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/google-play" class="card-cat__list__link" style="display: none;">Google Play Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/ios-development" class="card-cat__list__link">iOs Developer</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/swift" class="card-cat__list__link" style="display: none;">Swift Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/react-native" class="card-cat__list__link">React Native Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/objective-c" class="card-cat__list__link" style="display: none;">Objective C Developers</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-cat">
+                <div class="card-cat__outer">
+                    <a href="/skills-directory" class="card-cat__button"><span class="rlink">AND MORE</span></a>
+                </div>
+                <div class="card-cat__inner">
+                    <div class="card-cat__icon">
+                        <img src="images/2.svg" alt="">
+                    </div>
+                    <h3 class="card-cat__heading"><a href="">Web development</a></h3>
+                    <ul class="card-cat__list">
+                        <li class="card-cat__list__item">
+                            <a href="/results/frontend-development" class="card-cat__list__link">Front End
+                                Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/reactjs" class="card-cat__list__link">React.Js Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/angularjs" class="card-cat__list__link">AngularJS Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/nodejs" class="card-cat__list__link">Node.js Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/javascript" class="card-cat__list__link">JavaScript Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/net" class="card-cat__list__link">.NET Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/html5" class="card-cat__list__link" style="display: none;">HTML5 Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/c-sharp" class="card-cat__list__link" style="display: none;">C# Developers</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-cat">
+                <div class="card-cat__outer">
+                    <a href="/skills-directory" class="card-cat__button"><span class="rlink">AND MORE</span></a>
+                </div>
+                <div class="card-cat__inner">
+                    <div class="card-cat__icon">
+                        <img src="images/3.svg" alt="">
+                    </div>
+                    <h3 class="card-cat__heading"><a href="">Back End</a></h3>
+                    <ul class="card-cat__list">
+                        <li class="card-cat__list__item">
+                            <a href="/results/php" class="card-cat__list__link">PHP Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/wordpress" class="card-cat__list__link">WordPress Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/drupal" class="card-cat__list__link" style="display: none;">Drupal Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/java" class="card-cat__list__link">Java Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/python" class="card-cat__list__link">Python Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/ruby" class="card-cat__list__link" style="display: none;">Ruby Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/ruby-on-rails" class="card-cat__list__link">Ruby on Rails
+                                Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/django" class="card-cat__list__link">Django Developers</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-cat">
+                <div class="card-cat__outer">
+                    <a href="/skills-directory" class="card-cat__button"><span class="rlink">AND MORE</span></a>
+                </div>
+                <div class="card-cat__inner">
+                    <div class="card-cat__icon">
+                        <img src="images/4.svg" alt="">
+                    </div>
+                    <h3 class="card-cat__heading"><a href="/results/full-stack-development"
+                            title="full stack development">Miscellaneous</a></h3>
+                    <ul class="card-cat__list">
+                        <li class="card-cat__list__item">
+                            <a href="/results/blockchain" class="card-cat__list__link">Blockchain Developers</a>
+                        </li>
+
+                        <li class="card-cat__list__item">
+                            <a href="/results/api" class="card-cat__list__link" style="display: none;">API development</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/dropbox" class="card-cat__list__link" style="display: none;">Dropbox Developers</a>
+                        </li>
+                        <li class="card-cat__list__item" style="display: none;">
+                            <a href="/results/magento" class="card-cat__list__link">Magento Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/c-plus-plus" class="card-cat__list__link" style="display: none;">C++ Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/salesforce" class="card-cat__list__link" style="display: none;">Salesforce Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/meteor" class="card-cat__list__link" style="display: none;">Meteor Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/aws" class="card-cat__list__link">AWS developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/uiux-designer" class="card-cat__list__link">UI UX Designer</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/web-design" class="card-cat__list__link">Web Design</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-cat" style="display: none;">
+                <div class="card-cat__outer">
+                    <a href="/skills-directory" class="card-cat__button"><span class="rlink">AND MORE</span></a>
+                </div>
+                <div class="card-cat__inner">
+                    <div class="card-cat__icon">
+                        <img src="images/5.svg" alt="">
+                    </div>
+                    <h3 class="card-cat__heading"><a href="/results/webapi">DBMS/API</a></h3>
+                    <ul class="card-cat__list">
+                        <li class="card-cat__list__item">
+                            <a href="/results/oracle-sql" class="card-cat__list__link" style="display: none;">Oracle SQL Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/sql" class="card-cat__list__link">SQL Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/oracle" class="card-cat__list__link">Oracle Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/mongodb" class="card-cat__list__link">MongoDB Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/mysql" class="card-cat__list__link" style="display: none;">MySQL Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/opengl" class="card-cat__list__link" style="display: none;">OpenGL Developers</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/postgresql" class="card-cat__list__link" style="display: none;">PostgreSQL Developers</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-cat" style="display: none;">
+                <div class="card-cat__outer">
+                    <a href="/skills-directory" class="card-cat__button"><span class="rlink">AND MORE</span></a>
+                </div>
+                <div class="card-cat__inner">
+                    <div class="card-cat__icon">
+                        <img src="images/6.svg" alt="">
+                    </div>
+                    <h3 class="card-cat__heading"><a href="/results/uiux-designer">Design</a></h3>
+                    <ul class="card-cat__list">
+                        <li class="card-cat__list__item">
+                            <a href="/results/uiux-designer" class="card-cat__list__link">UI UX Designer</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/web-design" class="card-cat__list__link">Web Design</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/ux" class="card-cat__list__link" style="display: none;">UX</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/logo-design" class="card-cat__list__link" style="display: none;">Logo Design</a>
+                        </li>
+                        <li class="card-cat__list__item">
+                            <a href="/results/adobe-photoshop" class="card-cat__list__link" style="display: none;">Adobe Photoshop</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section__footer">
+            <a href="/skills-directory" class="yt-btn yt-btn--light yt-btn--right-arrow">
+                All categories
+            </a>
+        </div>
+
+    </div>
+</section>
+
+    <section class="section section--featured section--gray">
+        <div class="section__container container-fluid">
+            <header class="section__header text-center">
+                <div class="section__line"></div>
+                <h2 class="section__heading">FEATURED IN:</h2>
+            </header>
+
+            <div class="section__content text-center">
+                <ul class="featured">
+                    <li class="featured__item">
+                        <a href="#"
+                            target="_blank" rel="noopener nofollow" title="TechCrunch" class="featured__link"
+                        >
+                            <img src="images/techcrunch.png" alt="TechCrunch">
+                        </a>
+                    </li>
+
+                    <li class="featured__item">
+                        <a href="#"
+                            target="_blank" rel="noopener nofollow" title="Financial Times" class="featured__link"
+                        >
+                            <img src="images/financial_times.png"
+                                alt="Financial-Times">
+                        </a>
+                    </li>
+
+                    <li class="featured__item">
+                        <a href="#" target="_blank" rel="noopener nofollow"
+                            title="Clutch" class="featured__link">
+                            <img src="images/clutch.png" alt="Clutch">
+                        </a>
+                    </li>
+
+                    <li class="featured__item">
+                        <a href="#"
+                            target="_blank" rel="noopener nofollow" title="Yahoo" class="featured__link"
+                        >
+                            <img src="images/yahoo-finance-logo-png-yahoo-finance-logo.png"
+                                alt="Yahoo">
+                        </a>
+                    </li>
+                    <li class="featured__item">
+                        <a href="#"
+                            target="_blank" rel="noopener nofollow" title="Tech.London" class="featured__link"
+                        >
+                            <img src="images/tech-london-logo-print.png" alt="Tech.London">
+                        </a>
+                    </li>
+                    <li class="featured__item">
+                        <a href="#"
+                            target="_blank" rel="noopener nofollow" title="Digital Journal" class="featured__link"
+                        >
+                            <img src="images/digital_journal.png"
+                                alt="Digital Journal">
+                        </a>
+                    </li>
+                    <li class="featured__item">
+                        <a href="#"
+                            target="_blank" rel="noopener nofollow" title="Product Hunt" class="featured__link"
+                        >
+                            <img src="images/product-hunt.svg" alt="Product Hunt">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+            <section class="section section--adv" id="why-youteam">
+    <div class="section__container container-fluid">
+        <header class="section__header text-center">
+            <div class="section__line"></div>
+            <h2 class="section__heading">WHY YOUTEAM IS BETTER?</h2>
+        </header>
+        <div class="container-flex">
+            <div data-anchor="talent-pool" class="card-info">
+                <div class="card-info__icon">
+                    <img src="images/people-search-b.svg" alt="">
+                </div>
+                <h3 class="card-info__heading">Unique searchable talent pool</h3>
+                <div class="card-info__text">
+                    YouTeam leverages dynamic data of tech talent availability across its global network of trusted IT consulting firms. As a result you get access to hundreds of previously concealed profiles of software developers - ready to join your team in the course of two weeks.
+                </div>
+            </div>
+            <div id="no-freelancers" class="card-info">
+                <div class="card-info__icon">
+                    <img src="images/ci1.svg" alt="">
+                </div>
+                <h3 class="card-info__heading">Dedicated developers</h3>
+                <div class="card-info__text">
+                    Hiring software specialists from our talent pool, you can always be sure they all are full-time employed. This means they are dedicated to your project only, their skills are verified, their time and workplace is well managed, their training, salary and social package are taken care of. Most of good engineers are not freelancers.
+                </div>
+            </div>
+            <div data-anchor="pre-vetting" class="card-info">
+                <div class="card-info__icon">
+                    <img src="images/ci2.svg" alt="">
+                </div>
+                <h3 class="card-info__heading">Cost-efficient vetting</h3>
+                <div class="card-info__text">
+                    YouTeam carefully pre-vets IT consulting firms before allowing them to join its invitation-only network. Then it leverages the partners own talent vetting capabilities - so you only get developers with verified skills in your search results, while the rates remain competitive.
+                    <a href="#" target="_blank"> Learn more about our vetting process</a>
+                </div>
+            </div>
+            <div data-anchor="extra-costs" class="card-info">
+                <div class="card-info__icon">
+                    <img src="images/ci3.svg" alt="">
+                </div>
+                <h3 class="card-info__heading">Zero-risk working process</h3>
+                <div class="card-info__text">
+                    YouTeam provides number of services that eliminate risk for offshore software development after the work starts. We offer code paid to make sure that all IP is transferred in due course. All payments go through the platform, but they are only released to the outsourcing software vendor after the work is accepted. If after two weeks you are not satisfied with the quality of work - you get a 100% refund.
+                </div>
+            </div>
+            <div data-anchor="engagement-model" class="card-info">
+                <div class="card-info__icon">
+                    <img src="images/chart-b.svg" alt="">
+                </div>
+                <h3 class="card-info__heading">Total team flexibility</h3>
+                <div class="card-info__text">
+                    The YouTeam model is perfect for rapidly growing businesses, particularly startups and scale-ups, who need a longer-term dedicated team solution. It allows you to leverage the HR and management expertise of established IT consulting companies to hire scale you team rapidly. Should you need to de-scale the team - all what’s required is a two-week notice.
+                </div>
+            </div>
+            <div class="card-info">
+                <div class="card-info__icon">
+                    <img src="images/umbrlella.svg" alt="">
+                </div>
+                <h3 class="card-info__heading">No recruitment fees</h3>
+                <div class="card-info__text">
+                    YouTeam’s commission is charged to the vendors, not clients. For outsourcing software companies this is a completely new channel for finding clients. This is why they gladly pay YouTeam a commission, which allows us to keep access to this platform free for Customers like you. Forever!
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <section class="section--featured">
+    <div class="section__container container-fluid" data-anchor="work-starts">
+
+        <header class="section__header text-center">
+            <h2 class="section__heading">
+                It's also
+                <img src="images/clock-1.svg" alt="">
+                many, <br> many times quicker
+            </h2>
+        </header>
+
+        <div class="container-flex">
+            <div class="table-column firs-column">
+                <div class="table-column__heading table-column__white text-uppercase text-center">Average time
+                    before
+                </div>
+                <div class="table-column__cell">
+                    <div class="table-column__text text-right">Candidates shortlisted</div>
+                    <div class="table-column__text text-right">Your team is sourced</div>
+                    <div class="table-column__text text-right">Work commences</div>
+                </div>
+            </div>
+
+            <div class="table-column">
+                <div class="table-column__heading table-column__gray text-uppercase text-center">Traditional way
+                </div>
+                <div class="table-column__cell">
+                    <div class="table-column__text smaller text-center">2 days</div>
+                    <div class="table-column__text smaller text-center">6 weeks</div>
+                    <div class="table-column__text smaller text-center">8 weeks</div>
+                </div>
+            </div>
+
+            <div class="table-column table-column--shadow">
+                <div class="table-column__heading table-column__orange text-uppercase text-center">YouTeam</div>
+                <div class="table-column__cell">
+                    <div class="table-column__text text-center">15 minutes</div>
+                    <div class="table-column__text text-center">24 hours</div>
+                    <div class="table-column__text text-center">from 24 hours</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <section class="testimonials purple">
+            <div class="section__container container-fluid">
+                <div class="testimonials_content">
+                    <p class="text">I use YouTeam because of the speed and ease of getting the developer up and working asap.</p>
+                    <div class="author">
+                        <div class="title">
+                            <p>Mark Wright, <span>CPO</span></p>
+                            <div class="brand"><img src="images/vapar.png" alt=""></div>
+                        </div>
+                        <div class="img"><a href="#" target="_blank"><img src="images/mark.png" alt=""></a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+            <section data-anchor="intro" class="section section--intro section--gray">
+    <div class="section__container container-fluid">
+
+        <header class="section__header">
+            <div class="section__line"></div>
+            <h2 class="section__heading">WELCOME TO BOOKING.COM FOR IT OUTSOURCING</h2>
+            <div class="section__text section__text--simple">
+                <h2 style="font-size: 18px;font-weight: normal;color: #4a4a4a;">
+                    The fastest, easiest and safest way to hire software developers                </h2>
+            </div>
+        </header>
+
+    </div>
+
+    <div class="container-fluid">
+        <div class="orangebox">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="counter">
+                        <div class="counter__num" data-tests-vendors-count>
+                            <i-count-up-scroll :end="285">0</i-count-up-scroll>
+                        </div>
+                        <div class="counter__text">Carefully selected development houses</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="counter">
+                        <div class="counter__num" data-tests-engineers-count>
+                            <i-count-up-scroll :end="2173">0</i-count-up-scroll>
+                        </div>
+                        <div class="counter__text">Vetted engineers and designers</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="counter">
+                        <div class="counter__num" data-tests-projects-count>
+                            <i-count-up-scroll :end="6854">0</i-count-up-scroll>
+                        </div>
+                        <div class="counter__text">Projects successfully completed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="section section--adv" data-anchor="what-makes-our" id="talent-unique">
+        <div class="container-fluid">
+            <header class="section__header text-center">
+                <div class="section__line"></div>
+                <h2 class="section__heading">WHAT MAKES YOUTEAM TALENT POOL UNIQUE?</h2>
+            </header>
+
+            <div class="container-flex">
+                <div class="card-big">
+                    <div class="card-big__icon">
+                        <img src="images/talent-unique1.svg" alt="">
+                    </div>
+                    <h3 class="card-big__heading">93% of world’s contract developers are not freelancers</h3>
+                    <div class="card-big__text">
+                        All freelance developers in the world combined constitute a mere <b>7%</b> of the market. The overwhelming majority of engineers that work as a contractors for external clients are part of IT consulting firms or software development shops.
+                    </div>
+                </div>
+
+                <div class="card-big">
+                    <div class="card-big__icon">
+                        <img src="images/talent-unique2.svg" alt="">
+                    </div>
+                    <h3 class="card-big__heading">Good engineers want to choose jobs for themselves</h3>
+                    <div class="card-big__text">
+                        The biggest problem of an IT consultancy is churn of engineers. The annual rate of those leaving is between <b>10 and 20%.</b> The main reason is they don’t like the project they are working on. Good engineers don’t want to get stuck on a boring job - but it’s often hard to their firm to find new project for them quickly.
+                    </div>
+                </div>
+
+                <div class="card-big">
+                    <div class="card-big__icon">
+                        <img src="images/talent-unique3.svg" alt="">
+                    </div>
+                    <h3 class="card-big__heading">When you hire these engineers via YouTeam - everybody wins!</h3>
+                    <div class="card-big__text">
+                        YouTeam makes it possible for these engineers to make themselves available to be hired for your new project. The result is a classic win-win-win situation: the company doesn’t loose the engineer and gets a new client, the engineers can choose themselves what they want to work on and you as a client get access to the previously concealed world largest pool of engineering talent.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+            <section class="testimonials green">
+            <div class="section__container container-fluid">
+                <div class="testimonials_content">
+                    <p class="text">What I like about YouTeam is flexibility and transparency. Having an access to the large pool of available engineers comparing to a single agency makes it easier to extend my development team on demand.</p>
+                    <div class="author">
+                        <div class="title">
+                            <p>James Withall, <span>CTO</span></p>
+                            <div class="brand"><img src="images/onapp-logo-light-1.png" alt=""></div>
+                        </div>
+                        <div class="img"><a href="#" target="_blank"><img src="images/james.png" alt=""></a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                </div>
+                    <footer class="footer">
+                    <div class="container-fluid">
+    <div class="footer__top-box">
+        <div class="row">
+            <div class="col-md-3">
+                <nav class="footer__menu">
+                    <div class="row">
+                        <ul class="col-xs-6">
+                            <li><a href="/vetting.html" title="PROCESS">PROCESS</a></li>
+                            <li><a href="/team.html" title="TEAM">TEAM</a></li>
+                            <li><a href="/partners" title="PARTNERS">PARTNERS</a></li>
+                            <li><a href="/careers/" title="CAREERS">CAREERS</a></li>
+                            <li><a href="/blog" title="BLOG">BLOG</a></li>
+                            <li><a href="/faq">FAQ</a></li>
+                        </ul>
+                        <ul class="col-xs-6">
+                            <li><a href="/become-partner.html" title="PARTNERS" class="agency yt-btn--right-arrow" target="_blank" rel="noopener nofollow">FOR THE AGENCIES</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-md-6">
+                <div class="cloud-menu">
+                    <div class="row">
+                        <ul class="col-md-7">
+                            <li><a href="/services.html">Software Development Outsourcing Companies</a></li>
+                            <li><a href="/digital-product-development.html">Outsourced Product Development Services</a></li>
+                            <li><a href="/software-engineering-single.html">Software Development Outsourcing Services</a></li>
+                            <li><a href="/results/sql">SQL Developers</a></li>
+                            <li><a href="/">Hire Developers</a></li>
+                            <li><a href="/skills-directory">Software Developers & Programmers</a></li>
+                        </ul>
+                        <ul class="col-md-5">
+                            <li><a href="/instant-dedicated-team.html">Hire Dedicated Developers</a></li>
+                            <li><a href="/results/php">PHP Developers</a></li>
+                            <li><a href="/results/wordpress">WordPress Developers</a></li>
+                            <li><a href="/results/drupal">Drupal Developers</a></li>
+                            <li><a href="/results/magento">Magento Developers</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                                                                                                                                                                <div class="footer__subscribe-form">
+                    <h3>Subscribe:</h3>
+                    <div id="footer-subscribe-form"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer__contacts-box">
+        <div class="row">
+            <div class="col-md-4 col-lg-8 footer__contacts">
+
+                <div class="footer__contacts__item">
+                    <a class="ilink ilink--dark" href="mailto:frontdesk@youteam.co.uk">
+                        <span class="ilink__icon"><i class="fi-mail"></i></span>
+                        <span class="ilink__text">frontdesk@youteam.co.uk</span>
+                    </a>
+                </div>
+                <div class="footer__contacts__item">
+                    <a class="ilink ilink--dark" href="#" target="_blank" rel="noopener">
+                        <span class="ilink__icon"><i class="fi-pin"></i></span>
+                        <span class="ilink__text">20 Jerusalem Passage, London, England, EC1V 4JP</span>
+
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 footer__social text-md-center text-lg-left">
+                <ul class="social">
+                    <li class="social__item">
+                        <a href="#" target="_blank" rel="noopener" title="Twitter" class="social__link ilink ilink--dark">
+                            <span class="ilink__icon"><i class="fi-twitter"></i></span>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a href="#" target="_blank" rel="noopener" title="Linkedin" class="social__link ilink ilink--dark">
+                            <span class="ilink__icon"><i class="fi-linkedin"></i></span>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a href="#" target="_blank" rel="noopener" title="Facebook" class="social__link ilink ilink--dark">
+                            <span class="ilink__icon"><i class="fi-facebook"></i></span>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a href="javascript:void(0)" title="Contact" class="yt-btn yt-btn--green" @click.prevent="$wizard.open('contact')">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer__copyright copyright">
+        &copy; YOUTEAM 2014 – 2018
+        | <a href="/tos.html" title="TERMS & CONDITIONS" target="_blank">TERMS & CONDITIONS</a>
+        | <a href="/privacy-policy.html" title="PRIVACY POLICY" target="_blank">PRIVACY POLICY</a>
+    </div>
+</div>
+            </footer>
+            </div>
+
+                                    </div>
+
+									<script>
+              window.appState = {};
+            </script><script>
+              try {
+                appState['currency_exchange'] = JSON.parse("{\"currencies\":[{\"code\":\"GBP\",\"name\":\"British Pound\",\"prefix\":\"\\u00a3\",\"suffix\":\"\",\"rate\":1,\"precision\":2},{\"code\":\"USD\",\"name\":\"US Dollar\",\"prefix\":\"$\",\"suffix\":\"\",\"rate\":1.3,\"precision\":2}],\"activeCurrency\":\"GBP\"}");
+              } catch (e) {
+                appState['currency_exchange'] = {};
+              }
+            </script>
+            <script src="js/custom.js"></script>
+
+        </body>
+</html>

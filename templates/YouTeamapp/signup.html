@@ -1,0 +1,30 @@
+{% extends 'YouTeamapp/base.html' %}
+{%block baseblock %}
+
+{% load crispy_forms_tags %}
+
+
+<div class="container" >
+<div class="jumbotron">
+<!--<h1 class="myh1" align="center">|| SignUp Form ||</h1>-->
+<center>
+  <center><b><div contenteditable style="font-size:30px;"> Create <span style="color:red"> NinjaCoder </span> Account</div></b></center>
+<center>  <h4>it takes less than a minate</h4></center>
+
+  <a   href="/sigh"><input type="radio"   name="new-england-states" value="ri"></a>  Register for Devloper
+<a href="/sigh2"><input type="radio"  name="new-england-states" value="ri"></a>   Register for Client <br>
+</center>
+</br>
+{{msg}}
+<form method="post"  class="myh1">
+  {{sform|crispy}}
+  {{scform|crispy}}
+  {%csrf_token%}
+  <input type = "submit" class="btn btn-primary " value = "Register" />
+  <button onclick="goBack()" class="btn btn-primary" id="cancelRegisterButton">Cancel</button>
+</form>
+</div>
+</div>
+
+   </div>
+{% endblock %}

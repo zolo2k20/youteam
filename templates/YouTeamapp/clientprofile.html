@@ -1,0 +1,26 @@
+
+{% extends 'YouTeamapp/base.html' %}
+{%block baseblock %}
+
+{% load crispy_forms_tags %}
+
+
+<div class="container" >
+<div class="jumbotron">
+<!--<h1 class="myh1" align="center">|| SignUp Form ||</h1>-->
+<center>
+  <center><b><div contenteditable style="font-size:30px;">|| Client <span style="color:red"> information</span> ||</div></b></center>
+
+
+
+</center>
+</br>
+<form method="post"  class="myh1">
+  {{cform|crispy}}
+  {%csrf_token%}
+  <input type = "submit" class="btn btn-primary " value = "submit" />
+
+</form>
+</div>
+</div>
+{% endblock %}

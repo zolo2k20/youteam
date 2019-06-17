@@ -1,0 +1,140 @@
+
+{% extends 'YouTeamapp/base.html' %}
+{%block baseblock %}
+
+
+{% load crispy_forms_tags %}
+
+<center><b><div contenteditable style="font-size:30px;"> fill some <span style="color:red"> technical</span> information</div></b></center>
+
+<!--<table>
+<form method="post" enctype="multipart/form-data" >
+  <tr><th><label for="id_programing_language">Datetime:</label></th><td><input type="date" name="Datetime" required id="id_Datetime" value={{user_profile.Datetime}}></td></tr>
+  <tr><th><label for="id_expirencepl">cover:</label></th><td><input type="text" name="cover" maxlength="30" required id="id_cover" value={{user_profile.cover}}></td></tr>
+  <tr><th><label for="id_framework">Designation:</label></th><td><input type="text" name="Designation" required id="id_Designation" value={{user_profile.Designation}}></td></tr>
+  <tr><th><label for="id_expirencefw">Complete project:</label></th><td><input type="text" name="complete_project" maxlength="30" required id="id_complete_project" value={{user_profile.complete_project}}></td></tr>
+  <tr><th><label for="id_frontend_technology">Salary Month:</label></th><td><input type="text" name="frontend_technology" required id="id_salary_year" value={{user_profile.salary_year}}></td></tr>
+  <tr><th><label for="id_expirenceft">salary Month:</label></th><td><input type="text" name="salary_month" maxlength="30" required id="id_salary_month" value={{user_profile.salary_month}}></td></tr>
+  <tr><th><label for="id_data_base">salary_hour:</label></th><td><input type="text" name="salary_hour" required id="id_salary_hour" value={{user_profile.salary_hour}}></td></tr>
+  {% csrf_token %}
+
+  <input type="submit" value="Register" />
+
+</form>
+</table>
+</body>-->
+
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+      <div class="row">
+      <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
+           <!--<A href="#" >Edit Profile</A>-->
+        <!--<A align=left href="/accounts/logout">Logout</A>
+-->
+       <br>
+<p class=" text-info"></p>
+      </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+
+
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title"></h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+        <!--        <div class="col-md-3 col-lg-3 " align="center"> <img src="{{user_profile.Pic.url}}" class="img-circle" alt="Cinque Terre" width="100" height="100" class="img-circle img-responsive"> </div>-->
+      <div class="col-md-3 col-lg-3 " align="center"> <label for="id_framework">Pic:</label></th><td><input type="file" name="Pic" required id="id_Pic" value={{user_profile.Pic.url}}></div>
+                <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
+                  <dl>
+                    <dt>DEPARTMENT:</dt>
+                    <dd>Administrator</dd>
+                    <dt>HIRE DATE</dt>
+                    <dd>11/12/2013</dd>
+                    <dt>DATE OF BIRTH</dt>
+                       <dd>11/12/2013</dd>
+                    <dt>GENDER</dt>
+                    <dd>Male</dd>
+                  </dl>
+                </div>-->
+                <form method="post" enctype="multipart/form-data" >
+
+                <div class=" col-md-9 col-lg-9 ">
+                  <table class="table table-user-information">
+                    <tbody>
+                    <!--  <tr>
+
+                        <th><label for="id_programing_language">Datetime:</label></th><td><input type="date" name="Datetime" required id="id_Datetime" value={{user_profile.Datetime}}></td>
+                      </tr>-->
+
+                      <tr>
+                      <th><label for="id_framework">Designation:</label></th><td><input type="text" name="Designation" required id="id_Designation" value={{user_profile.Designation}}></td>
+                      </tr>
+
+                      </tr>
+                      <tr><th>
+                      <label for="id_expirencefw">Complete project:</label></th><td><input type="text" name="complete_project" maxlength="30" required id="id_complete_project" value={{user_profile.complete_project}}></td>
+                      </tr>
+
+                      <tr>
+                      <th><label for="id_frontend_technology">Salary year:</label></th><td><input type="text" name="frontend_technology" required id="id_salary_year" value={{user_profile.salary_year}}></td>
+                      </tr>
+
+
+                      <tr>
+                        <th><label for="id_expirenceft">Salary month:</label></th><td><input type="text" name="salary_month" maxlength="30" required id="id_salary_month" value={{user_profile.salary_month}}></td>
+                      </tr>
+                      <tr>
+                        <th><label for="id_expirenceft">Salary hour:</label></th><td><input type="text" name="salary_hour" maxlength="30" required id="id_salary_hour" value={{user_profile.salary_hour}}></td>
+                      </tr>
+                      <tr>
+                        <th><label for="id_expirenceft">City:</label></th><td><input type="text" name="City" maxlength="30" value={{user_profile.City}}></td>
+                      </tr>
+                      <tr>
+                        <th><label for="id_expirenceft">State:</label></th><td><input type="text" name="State" maxlength="30" value={{user_profile.State}}></td>
+                      </tr>
+                      <tr>
+                        <th><label for="id_expirenceft">Zip_code:</label></th><td><input type="text" name="Zip_code" maxlength="30"value={{user_profile.Zip_code}}></td>
+                      </tr>
+                      <tr>
+                        <th><label for="id_expirenceft">Offical email:</label></th><td><input type="text" name="offical_email" maxlength="30" required id="id_offical_email" value={{user_profile.offical_email}}></td>
+                      </tr>
+                      <tr>
+                        <th><label for="id_expirenceft">LinkedIn profile url:</label></th><td><input type="text" name="LinkedIn_profile_url" maxlength="30"  value={{user_profile.LinkedIn_profile_url}}></td>
+                      </tr>
+                      <tr>
+                  <th><label for="id_cover">cover:</label></th>
+                  <td><input type="text" name="cover" maxlength="1000" required id="id_cover" value={{user_profile.cover}}></td>
+                    </tr>
+
+                    </tbody>
+                  </table>
+                  <input type="submit" value="save" />
+
+                  {% csrf_token %}
+
+</form>
+                <!-- <a href="#" class="btn btn-primary">Edit profile</a>-->
+                <!--  <a href="#" class="btn btn-primary">Team Sales Performance</a>-->
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+<!--<img src="https://youteam.co.uk/blog/wp-content/uploads/2018/11/3.png" alt="" width="300" height="300" srcset="https://youteam.co.uk/blog/wp-content/uploads/2018/11/3.png 300w, https://youteam.co.uk/blog/wp-content/uploads/2018/11/3-150x150.png 150w" sizes="(max-width: 300px) 100vw, 300px" pagespeed_url_hash="412351683" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" class="alignnone size-full wp-image-4524">
+<img src="https://youteam.co.uk/blog/wp-content/uploads/2018/11/1-2.png" alt="" width="300" height="300" srcset="https://youteam.co.uk/blog/wp-content/uploads/2018/11/1-2.png 300w, https://youteam.co.uk/blog/wp-content/uploads/2018/11/1-2-150x150.png 150w" sizes="(max-width: 300px) 100vw, 300px" pagespeed_url_hash="3935202906" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" class="alignnone wp-image-4522 size-full">
+<img src="https://youteam.co.uk/blog/wp-content/uploads/2018/11/4.png" alt="" width="300" height="300" srcset="https://youteam.co.uk/blog/wp-content/uploads/2018/11/4.png 300w, https://youteam.co.uk/blog/wp-content/uploads/2018/11/4-150x150.png 150w" sizes="(max-width: 300px) 100vw, 300px" pagespeed_url_hash="706851604" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" class="alignnone size-full wp-image-4525">
+<img src="https://www.breakbulk.com/wp-content/uploads/2017/03/Breakbulk-Europe-Meet-App-Logo-200x200.png" alt="" width="100" height="100"  srcset="https://www.breakbulk.com/wp-content/uploads/2017/03/Breakbulk-Europe-Meet-App-Logo-200x200.png 300w, https://www.breakbulk.com/wp-content/uploads/2017/03/Breakbulk-Europe-Meet-App-Logo-200x200.png150w" sizes="(max-width: 300px) 100vw, 300px" pagespeed_url_hash="706851604" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" class="alignnone size-full wp-image-4525">-->
+{% endblock %}

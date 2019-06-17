@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+{% extends 'YouTeamapp/base.html' %}
+{%block baseblock %}
+{% load staticfiles %}
+<html>
+<body>
+<center><b><div contenteditable style="font-size:60px;"> HIRE <span style="color:red"> BETTER </span> DEVELOPERS</div></b></center>
+<center><h3>The easiest way to set up an offshore development team</h3></center>
+
+
+
+<form class="example" action="/action_page.php" style="margin:auto;max-width:800px">
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class=""></i>search</button>
+</form>
+
+<br>
+<br>
+<br>
+<br>
+<center><h4>Hire developers from the firms trusted by:</h4></center>
+<center><img src="{% static "images/microsoft.jpg"  %}" height="70" width="80"> <img src="{% static "images/amazon.jpg"  %}" height="50" width="80"><img src="{% static "images/Flipkart.jpg"  %}" height="70" width="80">      <img src="{% static "images/toyato.jpg"  %}" height="80" width="90">     <img src="{% static "images/tech-mahindra.jpg"  %}" height="50" width="90"> </center>
+<center><p style="color:; font-size:30px;"><b>How It Works</b></p></center>
+  <center><h4>HIRE ENGINEERS YOU WON'T FIND AT FREELANCE PORTALS<h4></center>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="{% static "images/telant.jpg"  %}" height="100" width="100">
+      <h3>Find the Talent</h3>
+      <h3>   </h3>
+      <p>Browse profiles of individual engineers at handpicked dev shops that have spare tech talent capacity.</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <img src="{% static "images/meet.jpg"  %}" height="90" width="100">
+      <h3>Meet the Firm</h3></br>
+      <p>Talk to engineers that you want to work with before signing up with their firm.</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+        <img src="{% static "images/settings-icon.png"  %}" height="90" width="100">
+      <h3>Don’t Bother With Management </h3>
+      <br>
+      <p>Payroll, office space, vacations, legal, training, and all other admin is handled by the firm.</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+
+  </div>
+</div>
+
+
+<center><h4 style="font-size:40px;"><b>WHY YOUTEAM IS BETTER?</b><h4></center>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+    <img src="{% static "images/In-person-icon.jpg"  %}" height="100" width="100">
+      <h3 style="font-size:40px;">Unique searchable talent pool</h3>
+      <h3>   </h3>
+      <p>YouTeam leverages dynamic data of tech talent availability across its global network of trusted IT consulting firms. As a result you get access to hundreds of previously concealed profiles of software developers - ready to join your team in the course of two weeks. </p>
+
+    </div>
+    <div class="col-sm-4">
+      <img src="{% static "images/developer.jpg"  %}" height="100" width="120">
+      <h3 style="font-size:40px;">Dedicated developers</h3>
+      <p>Hiring software specialists from our talent pool, you can always be sure they all are full-time employed. This means they are dedicated to your project only, their skills are verified, their time and workplace is well managed, their training, salary and social package are taken care of. Most of good engineers are not freelancers. </p>
+
+    </div>
+    <div class="col-sm-4">
+        <img src="{% static "images/CostEfficient.jpg"  %}" height="90" width="100">
+      <h3 style="font-size:40px;">Cost-efficient vetting</h3>
+
+      <p>YouTeam carefully pre-vets IT consulting firms before allowing them to join its invitation-only network. Then it leverages the partners own talent vetting capabilities - so you only get developers with verified skills in your search results, while the rates remain competitive. </p>
+      <p><a href="">Learn more about our vetting process</a></p>
+    </div>
+
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="{% static "images/noreask.jpg"  %}" height="100" width="100">
+      <h3 style="font-size:40px;">Zero-risk working process</h3>
+      <p>YouTeam provides number of services that eliminate risk for offshore software development after the work starts. We offer code paid to make sure that all IP is transferred in due course. All payments go through the platform, but they are only released to the outsourcing software vendor after the work is accepted. If after two weeks you are not satisfied with the quality of work - you get a 100% refund.  </p>
+
+    </div>
+    <div class="col-sm-4">
+      <img src="{% static "images/target-zero.jpg"  %}" height="100" width="140">
+      <h3 style="font-size:40px;">Total team flexibility</h3><br>
+      <p>The YouTeam model is perfect for rapidly growing businesses, particularly startups and scale-ups, who need a longer-term dedicated team solution. It allows you to leverage the HR and management expertise of established IT consulting companies to hire scale you team rapidly. Should you need to de-scale the team - all what’s required is a two-week notice.  </p>
+
+    </div>
+    <div class="col-sm-4">
+        <img src="{% static "images/free-tag.png"  %}" height="100" width="120">
+      <h3 style="font-size:40px;">No recruitment fees</h3><br>
+
+      <p>YouTeam’s commission is charged to the vendors, not clients. For outsourcing software companies this is a completely new channel for finding clients. This is why they gladly pay YouTeam a commission, which allows us to keep access to this platform free for Customers like you. Forever!  </p>
+
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,680 @@
+{% extends 'YouTeamapp/base.html' %}
+{%block baseblock %}
+
+
+<html>
+
+{% load static %}
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+     <script src="{% static 'createrow.js' %}"></script>
+     <script>
+     $(document).ready(function () {
+    var counter = 0;
+
+    $("#addrow").on("click", function () {
+        var newRow = $("<tr>");
+        var cols = "";
+
+
+        cols += '<td>{{tform.programing_language}}</td>';
+        cols += '<td>{{tform.expirencepl}}</td>';
+
+        cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
+        newRow.append(cols);
+        $("table.order-list").append(newRow);
+        counter++;
+    });
+
+
+
+    $("table.order-list").on("click", ".ibtnDel", function (event) {
+        $(this).closest("tr").remove();
+        counter -= 1
+    });
+
+
+});
+
+
+
+function calculateRow(row) {
+    var price = +row.find('input[name^="price"]').val();
+
+}
+
+function calculateGrandTotal() {
+    var grandTotal = 0;
+    $("table.order-list").find('input[name^="price"]').each(function () {
+        grandTotal += +$(this).val();
+    });
+    $("#grandtotal").text(grandTotal.toFixed(2));
+}
+
+
+
+<!-- Save function -->
+
+
+
+
+
+
+
+
+
+
+<!--Second -->
+
+    $(document).ready(function () {
+   var counter = 0;
+
+   $("#addrow1").on("click", function () {
+       var newRow = $("<tr>");
+       var cols = "";
+
+
+       cols += '<td>{{tform.framework}}</td>';
+       cols += '<td> {{tform.expirencefw}}</td>';
+
+       cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
+       newRow.append(cols);
+       $("table.order-list1").append(newRow);
+       counter++;
+   });
+
+
+
+   $("table.order-list1").on("click", ".ibtnDel", function (event) {
+       $(this).closest("tr").remove();
+       counter -= 1
+   });
+
+
+   });
+
+
+
+   function calculateRow(row) {
+   var price = +row.find('input[name^="price"]').val();
+
+   }
+
+   function calculateGrandTotal() {
+   var grandTotal = 0;
+   $("table.order-list1").find('input[name^="price"]').each(function () {
+       grandTotal += +$(this).val();
+   });
+   $("#grandtotal").text(grandTotal.toFixed(2));
+   }
+
+
+
+
+
+
+
+   <!--third  -->
+
+       $(document).ready(function () {
+      var counter = 0;
+
+      $("#addrow2").on("click", function () {
+          var newRow = $("<tr>");
+          var cols = "";
+
+
+          cols += '<td>{{tform.frontend_technology}}</td>';
+          cols += '<td>{{tform.expirenceft}}</td>';
+
+          cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
+          newRow.append(cols);
+          $("table.order-list2").append(newRow);
+          counter++;
+      });
+
+
+
+      $("table.order-list2").on("click", ".ibtnDel", function (event) {
+          $(this).closest("tr").remove();
+          counter -= 1
+      });
+
+
+      });
+
+
+
+      function calculateRow(row) {
+      var price = +row.find('input[name^="price"]').val();
+
+      }
+
+      function calculateGrandTotal() {
+      var grandTotal = 0;
+      $("table.order-list2").find('input[name^="price"]').each(function () {
+          grandTotal += +$(this).val();
+      });
+      $("#grandtotal").text(grandTotal.toFixed(2));
+      }
+
+
+
+
+      <!--forth  -->
+
+          $(document).ready(function () {
+         var counter = 0;
+
+         $("#addrow3").on("click", function () {
+             var newRow = $("<tr>");
+             var cols = "";
+
+
+             cols += '<td>{{tform.data_base}}</td>';
+             cols += '<td>{{tform.expirencedb}}</td>';
+
+             cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
+             newRow.append(cols);
+             $("table.order-list3").append(newRow);
+             counter++;
+         });
+
+
+
+         $("table.order-list3").on("click", ".ibtnDel", function (event) {
+             $(this).closest("tr").remove();
+             counter -= 1
+         });
+
+
+         });
+
+
+
+         function calculateRow(row) {
+         var price = +row.find('input[name^="price"]').val();
+
+         }
+
+         function calculateGrandTotal() {
+         var grandTotal = 0;
+         $("table.order-list3").find('input[name^="price"]').each(function () {
+             grandTotal += +$(this).val();
+         });
+         $("#grandtotal").text(grandTotal.toFixed(2));
+         }
+
+
+
+
+         <!--fifth  -->
+
+             $(document).ready(function () {
+            var counter = 0;
+
+            $("#addrow4").on("click", function () {
+                var newRow = $("<tr>");
+                var cols = "";
+
+
+                cols += '<td>  {{tform.development_tools}}</td>';
+                cols += '<td>{{tform.expirence}}</td>';
+
+                cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
+                newRow.append(cols);
+                $("table.order-list4").append(newRow);
+                counter++;
+            });
+
+
+
+            $("table.order-list4").on("click", ".ibtnDel", function (event) {
+                $(this).closest("tr").remove();
+                counter -= 1
+            });
+
+
+            });
+
+
+
+            function calculateRow(row) {
+            var price = +row.find('input[name^="price"]').val();
+
+            }
+
+            function calculateGrandTotal() {
+            var grandTotal = 0;
+            $("table.order-list4").find('input[name^="price"]').each(function () {
+                grandTotal += +$(this).val();
+            });
+            $("#grandtotal").text(grandTotal.toFixed(2));
+            }
+
+
+
+
+
+
+            <!--sixth  -->
+
+                $(document).ready(function () {
+               var counter = 0;
+
+               $("#addrow5").on("click", function () {
+                   var newRow = $("<tr>");
+                   var cols = "";
+
+                   cols += '<td> {{tform.operating_system}}</td>';
+                   cols += '<td>{{tform.expirence}}</td>';
+
+                   cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
+                   newRow.append(cols);
+                   $("table.order-list5").append(newRow);
+                   counter++;
+               });
+
+
+
+               $("table.order-list5").on("click", ".ibtnDel", function (event) {
+                   $(this).closest("tr").remove();
+                   counter -= 1
+               });
+
+
+               });
+
+
+
+               function calculateRow(row) {
+               var price = +row.find('input[name^="price"]').val();
+
+               }
+
+               function calculateGrandTotal() {
+               var grandTotal = 0;
+               $("table.order-list5").find('input[name^="price"]').each(function () {
+                   grandTotal += +$(this).val();
+               });
+               $("#grandtotal").text(grandTotal.toFixed(2));
+               }
+
+
+
+               <!--Seventh  -->
+
+                   $(document).ready(function () {
+                  var counter = 0;
+
+                  $("#addrow6").on("click", function () {
+                      var newRow = $("<tr>");
+                      var cols = "";
+
+                      cols += '<td>{{tform.other_skills}}</td>';
+                      cols += '<td>{{tform.expirenceos}}</td>';
+
+                      cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
+                      newRow.append(cols);
+                      $("table.order-list6").append(newRow);
+                      counter++;
+                  });
+
+
+
+                  $("table.order-list6").on("click", ".ibtnDel", function (event) {
+                      $(this).closest("tr").remove();
+                      counter -= 1
+                  });
+
+
+                  });
+
+
+
+                  function calculateRow(row) {
+                  var price = +row.find('input[name^="price"]').val();
+
+                  }
+
+                  function calculateGrandTotal() {
+                  var grandTotal = 0;
+                  $("table.order-list6").find('input[name^="price"]').each(function () {
+                      grandTotal += +$(this).val();
+                  });
+                  $("#grandtotal").text(grandTotal.toFixed(2));
+                  }
+
+
+
+
+
+
+
+
+
+
+ </script>
+
+
+
+
+
+
+
+
+
+<!--first-->
+<form method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<center>
+<tr>User Name*:{{tform.user_exp}}
+</tr></center>
+    <div class="container">
+        <table id="myTable" class=" table order-list" >
+        <thead>
+            <tr>
+                 <td>Language*</td>
+                <td>Expirence*</td>
+              <!--  <td>Phone</td>-->
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <!--  <td class="col-sm-4">
+                    <input type="text" name="name" value={{tform.expirencepl}}/>
+                   {{tform.expirencepl}}
+                </td>-->
+                <td class="col-sm-4">
+                  <!--  <input type="mail" name="mail"  class="form-control"/>-->
+              {{tform.programing_language}}
+                </td>
+                <td class="col-sm-3">
+                  <!--  <input type="text" name="phone"  class="form-control"/>-->
+                  {{tform.expirencepl}}
+                </td>
+                <td class="col-sm-2"><a class="deleteRow"></a>
+
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" style="text-align: left;">
+                    <input type="button"  class="btn btn-lg "id="addrow" value="Add Another Language" />
+                </td>
+            </tr>
+            <tr>
+            </tr>
+        </tfoot>
+    </table>
+    </div>
+
+<!--second-->
+   <div class="container">
+       <table id="myTable1" class=" table order-list1 ">
+       <thead>
+           <tr>
+                <td>Framework*</td>
+               <td>Expirence*</td>
+             <!--  <td>Phone</td>-->
+           </tr>
+       </thead>
+       <tbody>
+           <tr>
+             <!--  <td class="col-sm-4">
+                   <input type="text" name="name" value={{tform.expirencepl}}/>
+                  {{tform.expirencepl}}
+               </td>-->
+               <td class="col-sm-4">
+                 <!--  <input type="mail" name="mail"  class="form-control-->
+           {{tform.framework}}
+               </td>
+               <td class="col-sm-3">
+                 <!--  <input type="text" name="phone"  class="form-control"/>-->
+                 {{tform.expirencefw}}
+               </td>
+               <td class="col-sm-2"><a class="deleteRow"></a>
+
+               </td>
+           </tr>
+       </tbody>
+       <tfoot>
+           <tr>
+               <td colspan="5" style="text-align: left;">
+                   <input type="button" class="btn btn-lg " id="addrow1" value="Add Another Framework" />
+               </td>
+           </tr>
+           <tr>
+           </tr>
+       </tfoot>
+   </table>
+   </div>
+
+<!--third-->
+   <div class="container">
+       <table id="myTable2" class=" table order-list2 ">
+       <thead>
+           <tr>
+                <td>Frontend Technology*:</td>
+               <td>Expirence*</td>
+             <!--  <td>Phone</td>-->
+           </tr>
+       </thead>
+       <tbody>
+           <tr>
+
+             <!--  <td class="col-sm-4">
+                   <input type="text" name="name" value={{tform.expirencepl}}/>
+                  {{tform.expirencepl}}
+               </td>-->
+               <td class="col-sm-4">
+                 <!--  <input type="mail" name="mail"  class="form-control"/>-->
+           {{tform.frontend_technology}}
+               </td>
+               <td class="col-sm-3">
+                 <!--  <input type="text" name="phone"  class="form-control"/>-->
+                 {{tform.expirenceft}}
+               </td>
+               <td class="col-sm-2"><a class="deleteRow"></a>
+
+               </td>
+           </tr>
+       </tbody>
+       <tfoot>
+           <tr>
+               <td colspan="5" style="text-align: left;">
+                   <input type="button" class="btn btn-lg " id="addrow2" value="Add Another Frontend Technology" />
+               </td>
+           </tr>
+           <tr>
+           </tr>
+       </tfoot>
+   </table>
+   </div>
+
+
+
+
+   <!--Forth-->
+      <div class="container">
+          <table id="myTable3" class=" table order-list3 ">
+          <thead>
+              <tr>
+                   <td>Data base*:</td>
+                  <td>Expirence*</td>
+                <!--  <td>Phone</td>-->
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+
+
+                <!--  <td class="col-sm-4">
+                      <input type="text" name="name" value={{tform.expirencepl}}/>
+                     {{tform.expirencepl}}
+                  </td>-->
+                  <td class="col-sm-4">
+                    <!--  <input type="mail" name="mail"  class="form-control"/>-->
+               {{tform.data_base}}
+                  </td>
+                  <td class="col-sm-3">
+                    <!--  <input type="text" name="phone"  class="form-control"/>-->
+                {{tform.expirencedb}}
+                  </td>
+                  <td class="col-sm-2"><a class="deleteRow"></a>
+
+                  </td>
+              </tr>
+          </tbody>
+          <tfoot>
+              <tr>
+                  <td colspan="5" style="text-align: left;">
+                      <input type="button" class="btn btn-lg " id="addrow3" value="Add Another Data base" />
+                  </td>
+              </tr>
+              <tr>
+              </tr>
+          </tfoot>
+      </table>
+      </div>
+
+
+
+      <!--Fifth-->
+         <div class="container">
+             <table id="myTable4" class=" table order-list4 ">
+             <thead>
+                 <tr>
+                      <td>Development Tools*:</td>
+                     <td>Expirence*</td>
+                   <!--  <td>Phone</td>-->
+                 </tr>
+             </thead>
+             <tbody>
+                 <tr>
+
+
+                   <!--  <td class="col-sm-4">
+                         <input type="text" name="name" value={{tform.expirencepl}}/>
+                        {{tform.expirencepl}}
+                     </td>-->
+                     <td class="col-sm-4">
+                       <!--  <input type="mail" name="mail"  class="form-control"/>-->
+                   {{tform.development_tools}}
+                     </td>
+                     <td class="col-sm-3">
+                       <!--  <input type="text" name="phone"  class="form-control"/>-->
+                    {{tform.expirence}}
+                     </td>
+                     <td class="col-sm-2"><a class="deleteRow"></a>
+
+                     </td>
+                 </tr>
+             </tbody>
+             <tfoot>
+                 <tr>
+                     <td colspan="5" style="text-align: left;">
+                         <input type="button" class="btn btn-lg " id="addrow4" value="Add Another Development Tools" />
+                     </td>
+                 </tr>
+                 <tr>
+                 </tr>
+             </tfoot>
+         </table>
+         </div>
+
+
+         <!--Sixth-->
+            <div class="container">
+                <table id="myTable5" class=" table order-list5 ">
+                <thead>
+                    <tr>
+                         <td>Operating System*:</td>
+                        <td>Expirence*</td>
+                      <!--  <td>Phone</td>-->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+                      <!--  <td class="col-sm-4">
+                            <input type="text" name="name" value={{tform.expirencepl}}/>
+                           {{tform.expirencepl}}
+                        </td>-->
+                        <td class="col-sm-4">
+                          <!--  <input type="mail" name="mail"  class="form-control"/>-->
+                    {{tform.operating_system}}
+                        </td>
+                        <td class="col-sm-3">
+                          <!--  <input type="text" name="phone"  class="form-control"/>-->
+                        {{tform.expirence}}
+                        </td>
+                        <td class="col-sm-2"><a class="deleteRow"></a>
+
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5" style="text-align: left;">
+                            <input type="button" class="btn btn-lg " id="addrow5" value="Add Another Operating System" />
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+                </tfoot>
+            </table>
+            </div>
+
+            <!--Seventh-->
+
+               <div class="container">
+                   <table id="myTable6" class=" table order-list6 ">
+                   <thead>
+                       <tr>
+                            <td>Other Skills*:</td>
+                           <td>Expirence*</td>
+                         <!--  <td>Phone</td>-->
+                       </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+
+                         <!--  <td class="col-sm-4">
+                               <input type="text" name="name" value={{tform.expirencepl}}/>
+                              {{tform.expirencepl}}
+                           </td>-->
+                           <td class="col-sm-4">
+                             <!--  <input type="mail" name="mail"  class="form-control"/>-->
+                       {{tform.other_skills}}
+                           </td>
+                           <td class="col-sm-3">
+                             <!--  <input type="text" name="phone"  class="form-control"/>-->
+                        {{tform.expirenceos}}
+                           </td>
+                           <td class="col-sm-2"><a class="deleteRow"></a>
+
+                           </td>
+                       </tr>
+                   </tbody>
+                   <tfoot>
+                       <tr>
+                           <td colspan="5" style="text-align: left;">
+                               <input type="button" class="btn btn-lg " id="addrow6" value="Add Another Other Skills" />
+                           </td>
+                       </tr>
+                       <tr>
+                       </tr>
+                   </tfoot>
+               </table>
+               <input type="submit" value="Submit" />
+            </form>
+               </div>
+
+
+
+{% endblock %}

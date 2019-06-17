@@ -1,0 +1,50 @@
+<html lang="en">
+  {% load staticfiles %}
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>-->
+</head>
+<body>
+<div class="navbar">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+     </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#"></a></li>
+      <li><a class="active"><img src="{% static "images/mono.jpg"  %}" height="70" width="140"></a></li><br>
+      <!--<li><div contenteditable style="font-size:10px;"> HIRE <span style="color:red"> BETTER </span> DEVELOPERS</div></li>
+-->
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      {% if request.user.is_authenticated is not True %}
+     <li><a class="active" href="/sigh"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+    <li>  <a href="/accounts/login"  class="btn btn-dark" id="mylink1"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+      {% endif %}
+         <!-- <li><a class="active" href="/all121"class="yt-btn yt-btn--light-green visible">Post a Job</a></li>
+        <li><a class="active" href="/client"class="yt-btn yt-btn--light-green visible">Post a Job</a></li>
+        <li><a class="active" href="/tech" class="yt-btn yt-btn--light-green visible">Addprofile</a></li>-->
+          <li><a class="active" href="/all" class="yt-btn yt-btn--light-green visible">Allpost</a></li>
+
+ {% if request.user.is_authenticated is not False%}
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Profile<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+
+            <li><a href="/free" class="btn btn-dark" id="mylink2">Edit Profile</a></li>
+               <li><a href="/techview"  class="btn btn-dark">Edit Exp</a></li>
+            <li><a href="/accounts/logout"class="btn btn-dark" id="mylink2">Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+          </ul>
+        </li>
+ {%endif%}
+    </ul>
+  </div>
+  </div>
+  {%block baseblock %}
+  {% endblock %}
+</body>
+</html>

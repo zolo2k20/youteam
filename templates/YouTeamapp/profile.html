@@ -1,0 +1,23 @@
+{% extends 'YouTeamapp/base.html' %}
+{%block baseblock %}
+
+{% load crispy_forms_tags %}
+<div class="container" >
+<div class="jumbotron">
+
+<!--<center><b><div contenteditable style="font-size:30px;"> fill some <span style="color:red"> technical</span> information</div></b></center>-->
+<center><b><div contenteditable style="font-size:30px;">!! User<span style="color:red"> information</span> !!</div></b></center>
+{{msg}}
+<form method="post" enctype="multipart/form-data" >
+   <!--{{pform.as_p}}-->
+   {{pform|crispy}}
+   {{form|crispy}}
+   {{profile|crispy}}
+  {% csrf_token %}
+
+  <input type="submit" value="Register" />
+
+</form>
+</div>
+</div>
+{% endblock %}

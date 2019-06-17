@@ -1,0 +1,20 @@
+{% extends 'YouTeamapp/base.html' %}
+{%block baseblock %}
+
+{% for blg in tech %}
+ <button type="button" class="btn btn-info" data-toggle="collapse" data-target="">{{blg.programing_language}}{{blg.expirencepl}}</button>
+ <button type="button" class="btn btn-info" data-toggle="collapse" data-target="">{{blg.framework}}{{blg.expirencefw}}</button>
+ <button type="button" class="btn btn-info" data-toggle="collapse" data-target="">{{blg.frontend_technology}}{{blg.expirenceft}}</button>
+ <button type="button" class="btn btn-info" data-toggle="collapse" data-target="">{{blg.data_base}}{{blg.expirencedb}}</button>
+ <button type="button" class="btn btn-info" data-toggle="collapse" data-target="">{{blg.development_tools}}{{blg.expirence}}</button>
+ <button type="button" class="btn btn-info" data-toggle="collapse" data-target="">{{blg.operating_system}}{{blg.expirence}}</button>
+ <button type="button" class="btn btn-info" data-toggle="collapse" data-target="">{{blg.other_skills}}{{blg.expirenceos}}</button>
+<!--<h1>{{blg.programing_language}}{{blg.expirencepl}}</h>
+<h1>{{blg.framework}}{{blg.expirencefw}}</h1>
+<h1>{{blg.frontend_technology}}{{blg.expirenceft}}</h1>
+<h1>{{blg.data_base}}{{blg.expirencedb}}</h1>
+<h1>{{blg.development_tools}}{{blg.expirence}}</h1>
+<h1>{{blg.operating_system}}{{blg.expirence}}<h1>
+<h1>{{blg.other_skills}}{{blg.expirenceos}}</h1>-->
+{% endfor %}
+{% endblock %}

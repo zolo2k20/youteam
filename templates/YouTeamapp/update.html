@@ -1,0 +1,25 @@
+
+
+
+  <h1>Update Form</h1>
+<table>
+<form method="post" >
+<tr><th><label for="id_eid">cover:</label></th><td><input type="text" name="cover" required id="id_cover" value={{upprofile.programing_language}}} ></td></tr>
+<tr><th><label for="id_ename">Designation:</label></th><td><input type="text" name="Designation" maxlength="30" required id="id_Designation" value={upprofile.framework}}></td></tr>
+
+
+
+<!--
+<tr><td>{{upform.cover}}</td></tr>
+<tr><td>{{upform.Designation}}</td></tr>
+<tr><td>{{upform.complete_project}}</td></tr>
+<tr><td>{{upform.salary_year}}</td></tr>
+<tr><td>{{upform.salary_month}}</td></tr>
+<tr><td>{{upform.salary_hour}}</td></tr>
+
+-->
+
+{%csrf_token%}
+<input type="submit" value="Update" /></td></tr>
+</form>
+</table>

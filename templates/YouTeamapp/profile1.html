@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+{% extends 'YouTeamapp/base.html' %}
+{%block baseblock %}
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#F27023">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>Hire Remote Developers from Vetted Agencies</title>
+        <meta property="og:image" content="images/YouTeam_sharable.png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="images/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="images/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="images/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico'>
+        <link rel="manifest" href="/manifest.json">
+        <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#f27023">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-TileImage" content="images/mstile-144x144.png">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+            <link rel="stylesheet" type="text/css" href="css/cookieconsent.min.css" />
+            <link href="css/style.css" rel="stylesheet">
+<script>
+          window.addEventListener('load', function () {
+            if (!Object.prototype.hasOwnProperty.call(window, 'cookieconsent')) {
+              return;
+            }
+
+            window.cookieconsent.initialise({
+              palette: {
+                popup: {
+                  background: '#f8f8f8',
+                  text: '#9b9b9b',
+                },
+                button: {
+                  background: '#52C67C',
+                  text: '#fff',
+                }
+              },
+              theme: 'edgeless',
+            });
+          });
+        </script>
+
+
+                          </head>
+
+    <div class="random_container_top content--middle-indent" data-anchor="more-talent">
+        <div class="col-md-12 padding_container_more_talent">
+                            <h2 class="container_title container_title_big">MORE  Java  TALENT AVAILABLE AT THIS AGENCY</h2>
+                <div class="card-group__items card-group__items--flex">
+
+{% for blg in allpost %}
+<div class="card-inline" :class="{ 'talent-yt-widget': promoActionIsEnabled === true }">
+    <div class="card-inline__left-box">
+        <a href="/viewprofile" class="card-inline__photo"
+            data-tip-context="talent-inline-card" data-show-tip="view-profile" target="_blank"
+        >
+                                        <img src="{{blg.Pic.url}}" class="img-circle" alt="Cinque Terre" width="100" height="100">
+                    </a>
+                        <div class="card-inline__to-bottom">
+            <div class="card-inline__to-bottom">
+                <shortlist-like :talent-id="2558"></shortlist-like>
+                            </div>
+        </div>
+    </div>
+    <div class="card-inline__center-box">
+        <div class="card-inline__head">
+            <a href="/talent/2558?keywords%5B0%5D=216" class="card-inline__name" target="_blank">
+                <span data-tip-context="talent-inline-card" data-show-tip="view-profile">
+                    {{blg.customer}}
+                </span>
+            </a>
+                    </div>
+        <div class="card-inline__main-info">
+          {{blg.Designation}}
+        </div>
+        <div class="card-inline__to-bottom">
+            <div class="card-profile__main-description">
+{{blg.cover}}            </div>
+                                                                                                                <div class="card-inline__labels">
+                                    <a href="/results/java"
+                        title="Java"
+                        class="card-inline__label card-inline__label--active"
+                    >
+                        Java
+                        <span>
+                            7 years                        </span>
+                    </a>
+                                                    <a href="/results/?q=Java%20Kotlin"
+                        title="Kotlin"
+                        class="card-inline__label"
+                    >
+                        Kotlin
+                        <span>
+                            1 year                        </span>
+                    </a>
+                                    <a href="/results/?q=Java%20Scala"
+                        title="Scala"
+                        class="card-inline__label"
+                    >
+                        Scala
+                        <span>
+                            2 years                        </span>
+                    </a>
+                                <span class="more js-more">
+                    +20
+                    <span class="more__dropdown">
+                        <span class="more__inner">
+                                                            <a href="/results/?q=Java%20C%2B%2B"
+                                    title="C++"
+                                    class="card-inline__label "
+                                >
+                                    C++
+                                </a>
+                                                            <a href="/results/?q=Java%20Java"
+                                    title="Java"
+                                    class="card-inline__label card-inline__label--active"
+                                >
+                                    Java
+                                </a>
+                                                            <a href="/results/?q=Java%20Kotlin"
+                                    title="Kotlin"
+                                    class="card-inline__label "
+                                >
+                                    Kotlin
+                                </a>
+                                                            <a href="/results/?q=Java%20Scala"
+                                    title="Scala"
+                                    class="card-inline__label "
+                                >
+                                    Scala
+                                </a>
+                                                            <a href="/results/?q=Java%20Angular%201x"
+                                    title="Angular 1x"
+                                    class="card-inline__label "
+                                >
+                                    Angular 1x
+                                </a>
+                                                            <a href="/results/?q=Java%20Angular%204"
+                                    title="Angular 4"
+                                    class="card-inline__label "
+                                >
+                                    Angular 4
+                                </a>
+                                                            <a href="/results/?q=Java%20MongoDB"
+                                    title="MongoDB"
+                                    class="card-inline__label "
+                                >
+                                    MongoDB
+                                </a>
+                                                            <a href="/results/?q=Java%20PostgreSQL"
+                                    title="PostgreSQL"
+                                    class="card-inline__label "
+                                >
+                                    PostgreSQL
+                                </a>
+                                                            <a href="/results/?q=Java%20Sybase"
+                                    title="Sybase"
+                                    class="card-inline__label "
+                                >
+                                    Sybase
+                                </a>
+                                                            <a href="/results/?q=Java%20Redis"
+                                    title="Redis"
+                                    class="card-inline__label "
+                                >
+                                    Redis
+                                </a>
+                                                            <a href="/results/?q=Java%20Eclipse"
+                                    title="Eclipse"
+                                    class="card-inline__label "
+                                >
+                                    Eclipse
+                                </a>
+                                                            <a href="/results/?q=Java%20IntelliJ%20IDEA"
+                                    title="IntelliJ IDEA"
+                                    class="card-inline__label "
+                                >
+                                    IntelliJ IDEA
+                                </a>
+                                                            <a href="/results/?q=Java%20NetBeans"
+                                    title="NetBeans"
+                                    class="card-inline__label "
+                                >
+                                    NetBeans
+                                </a>
+                                                            <a href="/results/?q=Java%20Linux"
+                                    title="Linux"
+                                    class="card-inline__label "
+                                >
+                                    Linux
+                                </a>
+                                                            <a href="/results/?q=Java%20Windows"
+                                    title="Windows"
+                                    class="card-inline__label "
+                                >
+                                    Windows
+                                </a>
+                                                            <a href="/results/?q=Java%20macOS"
+                                    title="macOS"
+                                    class="card-inline__label "
+                                >
+                                    macOS
+                                </a>
+                                                            <a href="/results/?q=Java%20Spring"
+                                    title="Spring"
+                                    class="card-inline__label "
+                                >
+                                    Spring
+                                </a>
+                                                            <a href="/results/?q=Java%20XP"
+                                    title="XP"
+                                    class="card-inline__label "
+                                >
+                                    XP
+                                </a>
+                                                            <a href="/results/?q=Java%20Scrum"
+                                    title="Scrum"
+                                    class="card-inline__label "
+                                >
+                                    Scrum
+                                </a>
+                                                            <a href="/results/?q=Java%20Kanban"
+                                    title="Kanban"
+                                    class="card-inline__label "
+                                >
+                                    Kanban
+                                </a>
+                                                    </span>
+                    </span>
+                </span>
+            </div>
+
+            <div class="card-inline__info">
+                <div class="card-inline__to-bottom" data-anchor="experience">
+                    <div class="card-profile__t-head-sm ">
+                                                                                                <div class="card-inline__time-zone">GMT+1 West/Central Europe</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-inline__right-box">
+                                            <div class="card-rate-block">
+            <div is="rate-toggler"
+                :hour-rate="45.00"
+                :monthly-discount="0"
+                :annually-discount="0"
+                :period="$store.getters['rate-period/get']"
+                :show-discount="true"
+                style="white-space: nowrap;"
+                data-tip-context="talent-inline-card" data-show-tip="rate"
+            ></div>
+            <div class="rate-info">
+                            </div>
+        </div>
+
+        <a href="/viewprofile"
+            class="yt-btn yt-btn--green"
+            target="_blank"
+        >
+            view Profile
+        </a>
+        <div class="card-inline__to-bottom">
+            <div class="card__status status text-right" data-tip-context="talent" data-show-tip="book-an-interview">
+                <span class="status__title">Updated:</span>
+                <span class="status__value--big">{{blg.Datetime}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+
+
+                  <script src="js/custom.js"></script>
+
+<!-- pagination -->
+
+                <div class="pagination">
+                      <span class="step-links">
+                          {% if allpost.has_previous %}
+                              <a href="?page=1">&laquo; first</a>
+                              <a href="?page={{ allpost.previous_page_number }}">previous</a>
+                          {% endif %}
+
+                          <span class="current">
+                              Page {{ allpost.number }} of {{ allpost.paginator.num_pages }}.
+                          </span>
+
+                          {% if allpost.has_next %}
+                              <a href="?page={{ allpost.next_page_number }}">next</a>
+                              <a href="?page={{ allpost.paginator.num_pages }}">last &raquo;</a>
+                          {% endif %}
+                      </span>
+                  </div>
+
+
+
+
+
+ </body>
+</html>
+
+
+
+
+
+{% endblock%}

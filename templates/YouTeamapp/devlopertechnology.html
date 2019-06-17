@@ -1,0 +1,110 @@
+{% extends 'YouTeamapp/base.html' %}
+{%block baseblock %}
+
+
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div class="container">
+      <div class="row">
+      <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
+           <!--<A href="#" >Edit Profile</A>-->
+        <!--<A align=left href="/accounts/logout">Logout</A>
+-->
+       <br>
+<p class=" text-info"></p>
+      </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+
+
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">technical information</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+
+
+                <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
+                  <dl>
+                    <dt>DEPARTMENT:</dt>
+                    <dd>Administrator</dd>
+                    <dt>HIRE DATE</dt>
+                    <dd>11/12/2013</dd>
+                    <dt>DATE OF BIRTH</dt>
+                       <dd>11/12/2013</dd>
+                    <dt>GENDER</dt>
+                    <dd>Male</dd>
+                  </dl>
+                </div>-->
+                
+                <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class=" col-md-9 col-lg-9 ">
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>{{tform.user_exp}}
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td>Expirence(in year)</td>
+                      </tr>
+                      <tr>
+                        <td>Language*:</td>
+                        <td>{{tform.programing_language}}</td>
+                        <td>{{tform.expirencepl}}</td>
+                      </tr>
+
+                      <tr>
+                        <td>Framework*:</td>
+                      <td>{{tform.framework}}</td>
+                      <td>{{tform.expirencefw}}</td>
+                      </tr>
+
+                         <tr>
+                             <tr>
+                        <td>Frontend Technology*:</td>
+                      <td>{{tform.frontend_technology}}</td>
+                      <td>{{tform.expirenceft}}</td>
+                      </tr>
+                        <tr>
+                        <td>Data Base*:</td>
+                      <td>{{tform.data_base}}</td>
+                      <td>{{tform.expirencedb}}</td>
+                      </tr>
+                      <tr>
+                        <td>Development Tools*</td>
+                      <td>{{tform.development_tools}}</td>
+                      <td>{{tform.expirence}}</td>
+                    </tr><tr>
+                        <td>Operating System*</td>
+                      <td>{{tform.operating_system}}</td>
+                      <td>{{tform.expirence}}</td>
+
+                      </tr>
+                      <tr>
+                          <td>Other Skills*</td>
+                      <td>{{tform.other_skills}}</td>
+                      <td>{{tform.expirenceos}}</td>
+
+                        </tr>
+                    </tbody>
+                  </table>
+                  <input type="submit" value="Submit" />
+               </form>
+                <!-- <a href="#" class="btn btn-primary">Edit profile</a>-->
+                <!--  <a href="#" class="btn btn-primary">Team Sales Performance</a>-->
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock%}

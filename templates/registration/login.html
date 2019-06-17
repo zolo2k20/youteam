@@ -1,0 +1,27 @@
+{% extends 'YouTeamapp/base.html' %}
+{%block baseblock %}
+{% load crispy_forms_tags %}
+<body background="https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/J9H9WF0/sparkly-light-particles-moving-across-a-teal-yellow-gradient-background_rc_hs90v__F0000.png">-->
+
+	<div class="container" >
+	<div class="jumbotron">
+
+	<!--<center><b><div contenteditable style="font-size:30px;"> fill some <span style="color:red"> technical</span> information</div></b></center>-->
+	<center><b><div contenteditable style="font-size:30px;">!! User<span style="color:red"> Login</span> !!</div></b></center>
+
+	<form method="post" enctype="multipart/form-data" >
+	   <!--{{pform.as_p}}-->
+	   {{form|crispy}}
+
+	  {% csrf_token %}
+
+	  <input type="submit" value="Login" />
+
+	</form>
+	</div>
+	</div>
+</body>
+
+
+
+{% endblock %}

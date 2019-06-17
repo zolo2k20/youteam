@@ -1,0 +1,103 @@
+{% extends 'YouTeamapp/base.html' %}
+{%block baseblock %}
+
+
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+      <div class="row">
+      <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
+           <!--<A href="#" >Edit Profile</A>-->
+        <!--<A align=left href="/accounts/logout">Logout</A>
+-->
+       <br>
+<p class=" text-info"></p>
+      </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+
+
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">{{client_profile.contact_person}}</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center"> <img src="{{client_profile.Pic.url}}" class="img-circle" alt="Cinque Terre" width="100" height="100" class="img-circle img-responsive"> </div>
+
+                <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
+                  <dl>
+                    <dt>DEPARTMENT:</dt>
+                    <dd>Administrator</dd>
+                    <dt>HIRE DATE</dt>
+                    <dd>11/12/2013</dd>
+                    <dt>DATE OF BIRTH</dt>
+                       <dd>11/12/2013</dd>
+                    <dt>GENDER</dt>
+                    <dd>Male</dd>
+                  </dl>
+                </div>-->
+                <div class=" col-md-9 col-lg-9 ">
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Business Name:</td>
+                        <td>{{client_profile.business_name}}</td>
+                      </tr>
+                      <tr>
+                        <td>Street address</td>
+                        <td>{{client_profile.Street_address}}</td>
+                      </tr>
+                      <tr>
+                        <td>City:</td>
+                        <td>{{client_profile.City}}</td>
+                      </tr>
+
+                      <tr>
+                        <td>State:</td>
+                        <td>{{client_profile.State}}</td>
+                      </tr>
+
+                      </tr>
+                      <tr>
+                        <td>Zip code:</td>
+                        <td>{{client_profile.Zip_code}}</td>
+                      </tr>
+
+                      <tr>
+                        <td>offical_email</td>
+                        <td>{{client_profile.offical_email}}</td>
+                      </tr>
+                        <td>LinkedIn_profile_url</td>
+                        <td>{{client_profile.LinkedIn_profile_url}}
+                        </td>
+
+                      </tr>
+                      <tr>
+                        <td>Specific RegistrationDetails</td>
+                        <td>{{client_profile.Specific Registration Details}}</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                <!-- <a href="#" class="btn btn-primary">Edit profile</a>-->
+                <!--  <a href="#" class="btn btn-primary">Team Sales Performance</a>-->
+                </div>
+              </div>
+            </div>
+                <div class="panel-footer">
+                        <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
+                        <span class="pull-right">
+                            <a href="/edit" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning">Edit Profile</a>
+                            <a href="/deletepost" onclick="return confirm('Are you sure?')"  class="btn btn-sm btn-danger">Delete profile </a>
+                        </span>
+                    </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
